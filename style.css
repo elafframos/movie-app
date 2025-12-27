@@ -1,0 +1,217 @@
+/* style.css */
+* {
+    margin: 0; /* Tira a margem padrão */
+    padding: 0; /* Tira o padding padrão */
+    box-sizing: border-box; /* Facilita o controle de tamanhos */
+}
+
+/* Estilo geral da página */
+body {
+    font-family: 'Inter', sans-serif; /* Fonte moderna e limpa */
+    background-color: #0e1117; /* Fundo escuro */
+    color: #ffffff;            /* Texto claro para contraste */
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+    display: flex;             /* Ativa o Flexbox */
+    justify-content: space-between; /* Distribui os itens: ponta, meio, ponta */
+    align-items: center;       /* Alinha todos verticalmente no centro */
+    padding: 15px 30px;       /* Espaçamento interno */
+    background-color: #141414; /* Cor escura que escolhemos */
+    color: white;            /* Cor do texto */
+}
+
+.logo, .profile {
+    font-size: 17px;          /* Tamanho maior para o logo */
+    font-weight: bold;        /* Negrito para destaque */
+    cursor: pointer;          /* Cursor de mãozinha ao passar por cima */
+}
+
+/* Estilo do container de busca */
+.search-container {
+    flex-grow: 1;              /* Faz o container do meio tentar ocupar espaço */
+    max-width: 500px;          /* Mas limita a largura para não ficar gigante */
+    margin: 0 20px;            /* Espaçamento lateral */
+}
+
+/* Estilo do input de busca */
+.search-container input {
+    width: 100%;              /* Ocupa toda a largura do container */
+    padding: 8px;              /* Espaçamento interno */
+    border-radius: 20px;        /* Bordas arredondadas */
+    border: none;             /* Sem borda */
+}
+
+/* Estilo do botão de busca */
+#search-container {
+    display: flex;             /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+}
+
+/* Estilo do input de texto */
+input[type="text"] {
+    margin-top: 16px;          /* Espaço acima do input */
+    width: 60%;               /* Largura do input */
+    padding: 10px;            /* Espaçamento interno */
+    margin-right: 10px;         /* Espaço entre o input e o botão */
+    border: 1px solid #ccc;  /* Borda cinza clara */
+    border-radius: 4px;          /* Bordas arredondadas */
+}
+
+/* Estilo do botão */
+button {
+    padding: 10px 15px;       /* Espaçamento interno */
+    border: none;          /* Sem borda */
+    background-color: #ff0000;  /* Cor vermelha vibrante */
+    color: white;         /* Texto branco */
+    border-radius: 4px;         /* Bordas arredondadas */
+    cursor: pointer;      /* Cursor de mãozinha ao passar por cima */
+}
+
+/* Efeito hover para o botão */
+button:hover {
+    background-color: #e50914;  /* Cor vermelha mais escura ao passar o mouse */
+}
+
+/* Estilo do conteúdo principal */
+main {
+    display: block;            /* Ativa o Flexbox */
+    margin: 0 auto;          /* Centraliza horizontalmente */
+    margin-top: 20px;         /* Espaço acima */
+    padding: 20px;          /* Espaçamento interno */
+    border-radius: 8px;         /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+h1{
+    text-align: center;
+}
+
+#hero-image {
+    margin-left: 10%;
+    background-size: cover;   /* A MÁGICA: Cobre toda a área sem distorcer, cortando as sobras se necessário */
+    background-position: center top; /* Centraliza a imagem e foca mais na parte de cima (bom para rostos) */
+    background-repeat: no-repeat;
+    position: relative; /* Necessário se for usar o truque da sombra abaixo */  
+    border-radius: 8px;       /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    cursor: pointer;    /* Cursor de mãozinha ao passar por cima */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+
+/* Estilo da div de resultados */
+div#results {
+    display: block;           /* Exibe como bloco */
+    margin: 0 auto;         /* Centraliza horizontalmente */
+    background-color: #1f1f1f; /* Fundo escuro */
+    padding: 20px;         /* Espaçamento interno */
+    gap: 30px;            /* Espaço entre os itens */
+    border-radius: 8px;        /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px;     /* Espaço acima dos resultados */
+    gap: 20px;            /* Espaço entre os itens */
+    box-shadow: rgba(0, 0, 0, 0.7); /* Sombra mais intensa */
+}
+
+/* Estilo da div de filmes populares */
+.movies {
+    display: flex;            /* Coloca os itens em linha */
+    overflow-x: auto;         /* Permite rolar para o lado */
+    gap: 15px;                /* Espaço entre os filmes */
+    scroll-behavior: smooth;  /* Suaviza a rolagem */
+    padding-bottom: 10px;    /* Espaço abaixo dos pôsteres */
+
+    & h2 {
+        font-size: medium;
+    }
+}
+
+/* 1. O container que tem o overflow */
+.movies {
+    overflow-x: auto;
+    scrollbar-width: thin;          /* Firefox: deixa a barra fininha */
+    scrollbar-color: #e50914 #141414; /* Firefox: cor do gatilho e do fundo */
+}
+
+/* 2. Estilo para Chrome, Edge e Safari */
+/* O tamanho da barra (altura para rolagem horizontal) */
+.movies::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* O fundo da barra (a trilha) */
+.movies::-webkit-scrollbar-track {
+    background: #141414; 
+}
+
+/* O "dedo" da barra (a parte que se move) */
+.movies::-webkit-scrollbar-thumb {
+    background-color: #e50914;    /* Cor de destaque */
+    border-radius: 10px;          /* Deixa arredondada */
+    border: 2px solid #141414;    /* Cria um espaçamento visual */
+}
+
+/* Quando o usuário passa o mouse na barra */
+section::-webkit-scrollbar-thumb:hover {
+    background-color: #ff1a25;
+}
+
+/* Estilo dos cartões de filme */
+#movie-card {
+    flex: 0 0 auto;          /* Impede que os cartões encolham */
+    width: 150px;             /* Largura fixa para os cartões */
+    text-align: center;      /* Centraliza o texto */
+}
+
+img#posters {  
+    max-width: 150px;       /* Largura máxima da imagem */
+    border-radius: 8px;       /* Bordas arredondadas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    cursor: pointer;    /* Cursor de mãozinha ao passar por cima */
+}
+
+/* Estilo dos títulos e parágrafos */
+h2 {
+    margin-top: 10px;      /* Espaço acima do título */
+    color: #007bff;         /* Cor azul para o título */
+}
+
+/* Estilo das imagens dos filmes */
+img#poster-result {
+    max-width: 10%;        /* Largura máxima da imagem */
+    height: auto;        /* Altura automática para manter a proporção */
+    border-radius: 8px;       /* Bordas arredondadas */
+    margin-top: 10px;     /* Espaço acima da imagem */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    cursor: pointer;    /* Cursor de mãozinha ao passar por cima */
+}
+
+/* Estilo dos parágrafos */
+p {
+    margin: 10px 0;         /* Espaço acima e abaixo do parágrafo */
+}
+
+/* Estilo do rodapé */
+footer {
+    text-align: center;   /* Centraliza o texto */
+    margin-top: 20px;   /* Espaço acima do rodapé */
+    font-size: 0.9em;   /* Tamanho de fonte menor */
+    color: #777;     /* Cor cinza clara */
+}
+
+@media (max-width: 1090px) {
+    #hero-image {
+    margin-left: 7%;
+    width: 80%;
+    background-size: cover;   /* A MÁGICA: Cobre toda a área sem distorcer, cortando as sobras se necessário */
+    background-position: center top; /* Centraliza a imagem e foca mais na parte de cima (bom para rostos) */
+    background-repeat: no-repeat;
+    position: relative; /* Necessário se for usar o truque da sombra abaixo */  
+    border-radius: 8px;       /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    cursor: pointer;    /* Cursor de mãozinha ao passar por cima */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+}
+}
